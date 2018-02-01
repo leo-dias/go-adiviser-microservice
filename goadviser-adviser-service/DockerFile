@@ -1,0 +1,5 @@
+FROM openjdk:8
+
+ADD target/goadviser-adviser-service.jar goadviser-adviser-service.jar
+EXPOSE 8081
+ENTRYPOINT ["java", "-jar", "goadviser-adviser-service.jar"]

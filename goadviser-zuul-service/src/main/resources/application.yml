@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: goadviser-zuul-service
+
+server:
+  port: 8080
+
+zuul:
+  prefix: /goadviser-api
+  routes:
+    adviser-service:
+      path: /advisers/**
+      serviceId: ADVISER-SERVICE
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9090/eureka
+  instance:
+    hostname: localhost
